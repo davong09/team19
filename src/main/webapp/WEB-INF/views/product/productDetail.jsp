@@ -24,7 +24,7 @@
 	</c:if>
 	<div class="container">
 		<%-- 헤더부분 include 액션 태그 사용, c:url 사용금지, 경로 직접 지정해야함. --%>
-		<jsp:include page="/resources/common/header.jsp" />
+		<jsp:include page="/resources/common/mainheader.jsp" />
 		<main>
 			<table border="1">
 				<tr>

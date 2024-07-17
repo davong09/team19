@@ -43,12 +43,12 @@ public class ProductController {
 	 * 상품 내용 보기 메소드
 	 */
     @GetMapping("/detail/{proId}")
-    public String getBoard(@PathVariable("proId") int proId, Model model) {	
+    public String getProduct(@PathVariable("proId") int proId, Model model) {	
 //		log.info("ProductController getProduct");
-		ProductVo productVo = productService.getProduct(proId);
-		model.addAttribute("productVo", productVo);
-		return "product/productDetail"; // jsp 이름
-	}
+    	ProductVo productVo = productService.getProduct(proId);
+    	model.addAttribute("productVo", productVo);
+    	return "product/productDetail"; // jsp 이름
+    }
 	
 	/**
 	 * 상품 목록 보기 메소드

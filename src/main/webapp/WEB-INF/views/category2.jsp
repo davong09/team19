@@ -14,40 +14,7 @@
 <meta charset="UTF-8">
 <title>productList.jsp</title>
 <style>
-.mainheader .cart {
-	max-height: 30px; /* 장바구니 이미지의 최대 높이 설정 */
-	margin-left: 20px; /* 왼쪽 여백 추가 */
-}
 
-.nav-menu {
-	background-color: #ffffff;
-	padding: 20px;
-	display: flex;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav-menu .nav-category .cate {
-	margin: 0 15px;
-	text-align: left;
-	text-decoration: none;
-}
-
-.nav-menu .nav-category .imgmenu {
-	width: 20px; /* 원하는 너비로 설정 */
-	height: auto; /* 높이는 자동으로 설정 */
-	vertical-align: middle; /* 텍스트와 수직 정렬 */
-	margin-right: 10px; /* 텍스트와의 간격 조절 */
-}
-
-.nav-menu .nav-categorymain {
-	margin-left: 30px;
-}
-
-.nav-menu .nav-categorymain a {
-	margin: 0 15px;
-	text-align: center;
-	text-decoration: none;
-}
 
 .content {
 	padding: 20px;
@@ -111,18 +78,6 @@
 	<div class="container">
 		<%-- 헤더부분 include 액션 태그 사용, c:url 사용금지, 경로 직접 지정해야함. --%>
 		<jsp:include page="/resources/common/mainheader.jsp" />
-		<div class="nav-menu">
-			<div class="nav-category">
-				<img src="/resources/image/menubar.png" class="imgmenu"> 
-				<a href="/product/list">카테고리</a>
-			</div>
-			<div class="nav-categorymain">
-				<a href="<c:url value='/category2'/>">신상품</a> <a
-					href="<c:url value='/category3'/>">베스트</a> <a
-					href="<c:url value='/category4'/>">특가/혜택</a> <a
-					href="<c:url value='/category5'/>">계절별음식</a>
-			</div>
-		</div>
 		<!-- 네비게이션 바 끝 -->
 
 		<!-- 메인 콘텐츠 시작 -->

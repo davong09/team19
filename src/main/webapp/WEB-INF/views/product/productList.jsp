@@ -13,10 +13,66 @@
 <head>
 <meta charset="UTF-8">
 <title>productList.jsp</title>
-<%-- css 자원요청 문자열에 시시각각 변하는 시간을 파라미터로 전달하기 때문에 서브는 매번 새로운 요청으로 착각, 
-   늘 css 읽어온다. 캐싱안함. --%>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/css/product.css' />?v=${now}" />
+<style>
+
+
+.content {
+	padding: 20px;
+}
+
+.content .slideshow-container {
+	width: 100%;
+	max-width: 800px; /* 최대 너비 설정 */
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.content .mySlides {
+	display: none;
+}
+
+.content .mySlides img {
+	width: 100%;
+	height: 400px; /* 고정된 높이 설정 */
+	object-fit: cover; /* 이미지가 비율을 유지하며 잘 맞도록 조정 */
+}
+
+.product-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.product-item {
+	width: 23%; /* 4개의 아이템을 한 줄에 표시 */
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	text-align: center;
+	border: 1px solid #e0e0e0;
+	padding: 10px;
+}
+
+.product-item img {
+	width: 100%;
+	height: 100px;
+}
+
+.product-item .price {
+	color: #ff5722;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.footer {
+	background-color: #f1f1f1;
+	text-align: center;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -34,13 +90,13 @@
 					<div class="product-content">
 						<c:forEach var="product" items="${productList }" varStatus="idx">
 							<div class="product-item">
-								<img src="${contextPath}/resources/uploads/${product.img1 }" alt="${product.img1 }">
-								<p>
-									<c:out value="${product.name}" />
-								</p>
-								<p class="price">
-									<c:out value="${product.price }" />
-								</p>
+							<%-- <a href="<c:url value='/product/detail/${product.img1 }'/>"> --%>
+							<a href="<c:url value='/product/detail/${product.proId }'/>"> <img src="${contextPath}/resources/uploads/${product.img1 }" alt="상품" /></a>
+							<a href="<c:url value='/product/detail/${product.proId }'/>"><c:out value="${product.name }"></c:out></a> <br>
+							<a href="<c:url value='/product/detail/${product.proId }'/>"><c:out value="${product.price }"></c:out></a>
+<%-- 							<a href="<c:url value='/product/detail/${product.proId }'/>"> <img src="${contextPath}/resources/uploads/${product.img1 }" alt="상품" /></a>
+							<a href="<c:url value='/detail'/>"><c:out value="${product.name }"></c:out></a> <br>
+							<a href="<c:url value='/detail'/>"><c:out value="${product.price }"></c:out></a> --%>
 							</div>
 						</c:forEach>
 					</div>
